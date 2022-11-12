@@ -1,3 +1,7 @@
+//Geocache Compass main file
+//made by T&R (Mecknavorz)
+
+//includes
 #include <Arduino.h>
 #include <FastLED.h>  //librariers for the LED ring
 
