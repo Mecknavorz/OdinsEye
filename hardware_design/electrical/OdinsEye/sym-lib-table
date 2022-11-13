@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name "GT-U7_devboard")(type "KiCad")(uri "C:/Users/antares/Projects/OdinsEye/hardware_design/electrical/GPS Module DevBoard - GT-U7/GT-U7_devboard.kicad_sym")(options "")(descr ""))
+  (lib (name "GC9A01A_O1")(type "KiCad")(uri "C:/Users/antares/Projects/OdinsEye/hardware_design/electrical/LCD Module - GC9A01A/GC9A01A_O1.kicad_sym")(options "")(descr ""))
+  (lib (name "GC9A01A")(type "KiCad")(uri "C:/Users/antares/Projects/OdinsEye/hardware_design/electrical/LCD Module - GC9A01A/GC9A01A.kicad_sym")(options "")(descr ""))
+  (lib (name "WS2812")(type "KiCad")(uri "C:/Users/antares/Projects/OdinsEye/hardware_design/electrical/LED Module - WS2812/WS2812.kicad_sym")(options "")(descr ""))
+  (lib (name "AS5600")(type "KiCad")(uri "C:/Users/antares/Projects/OdinsEye/hardware_design/electrical/Magnetic Encoder Module DevBoard - AS5600/AS5600.kicad_sym")(options "")(descr ""))
+)
