@@ -7,6 +7,8 @@
 
 //basic includes
 #include "Arduino.h"
+#include "Wifi.h"
+#include "WiFiClientSecure.h"
 
 class geocache{
     public:
@@ -16,11 +18,11 @@ class geocache{
     int dif; //difficulty
     int ter; //terrain
     int size; //size
+    //stringtype;
+    //string name;
     //functions
     geocache();
     geocache(double Lat, double Long, int Dif, int Ter, int Siz); //defualt constructor
-    //string type;
-    //description?????
     private:
     //hidden?
     //logged
@@ -31,7 +33,8 @@ class fetcher{
     public:
     geocache nearme[20]; //nearby geocaches
     fetcher(); //defualt constructor
-    void getNearby();
+    fetcher(int find);
+    void getNearby(double cLat, double cLong);
 };
 
 #endif

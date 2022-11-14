@@ -5,6 +5,8 @@
 
 //includes
 #include "Arduino.h"
+#include "Wifi.h"
+#include "WiFiClientSecure.h"
 #include "fetcher.h"
 
 //defualt constructor
@@ -26,5 +28,20 @@ geocache::geocache(double Lat, double Long, int Dif, int Ter, int Siz){
 
 //defualt fetcher constructor
 fetcher::fetcher(){
-    geocache stored[20];
+    geocache nearme[20];
+}
+
+fetcher::fetcher(int find){
+    geocache nearme[find];
+    //getNearby();
+}
+
+//function to fetch nearby 
+void fetcher::getNearby(double Lat, double Long){
+    //iterate over our array of geocaches to store
+    //defualt is 20 but figured I'd prepare ahead incase I wanted that to change
+    for(int i=0; i<sizeof(fetcher::nearme); i++){
+        //fetch the geocache's data
+
+    }
 }

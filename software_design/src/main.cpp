@@ -4,6 +4,8 @@
 //includes
 #include <Arduino.h>
 #include <FastLED.h>  //librariers for the LED ring
+#include <Wifi.h>
+#include <WiFiClientSecure.h>
 
 //Pin info, what's hooked up to what
 //currently placeholder values
@@ -12,6 +14,8 @@
 //how many pixels we have
 //the ring has 24 but we're using the 0 as a sacrifice
 #define NUM_LEDS 25
+
+WiFi.mode(WIFI_STA)
 CRGB leds[NUM_LEDS]; //array to manage LEDs
 
 void setup() {
