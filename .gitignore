@@ -6,3 +6,6 @@
 
 # Ignore MSOffice temp files
 ~$*
+
+# Ignore KiCad backups
+hardware_design/electrical/OdinsEye/OdinsEye-backups/*
