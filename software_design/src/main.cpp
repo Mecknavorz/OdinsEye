@@ -1,45 +1,47 @@
-//Geocache Compass main file
-//made by T&R (Mecknavorz)
+// Geocache Compass main file
+// made by T&R (Mecknavorz)
+// in collaboration with Antares Husky
 
-//includes
+// includes
 #include <Arduino.h>
-#include <FastLED.h>  //librariers for the LED ring
 #include <Wifi.h>
-#include <WiFiClientSecure.h>
 
-//Pin info, what's hooked up to what
-//currently placeholder values
-#define LEDPIN 1
+#include <RingControl.h>
+#include <UMS3.h>
 
-//how many pixels we have
-//the ring has 24 but we're using the 0 as a sacrifice
-#define NUM_LEDS 25
+#include "Configuration.h"
 
-WiFi.mode(WIFI_STA)
-CRGB leds[NUM_LEDS]; //array to manage LEDs
+// tinys3 helper
+UMS3 ums3;
 
-void setup() {
-  //setup stuff
-  //LED Ring Set Up
-  FastLED.addLeds<NEOPIXEL, 6>(leds, NUM_LEDS);
+void setup()
+{
+  // Initialize all board peripherals, call this first
+  ums3.begin();
 
+  // builtin led
+  ums3.setPixelBrightness(255 / 3);
+
+  // serial setup
+  Serial.begin(9600);
+
+  // wifi setup
+  WiFi.begin("connect for a bad time", "evangelion");
+
+  // LED Ring Set Up
+  ringControlSetup();
 }
 
-void loop() {
+int color = 0;
+void loop()
+{
   // put your main code here, to run repeatedly:
   ringControl();
-}
 
-//controls the LED ring
-//sDir is the direction of our selves
-//gDir is the direction of the geocache
-void ringControl(){
-  //generic blink
-  leds[0] = CRGB::White;
-  FastLED.show();
-  delay(30);
+#ifdef WIFI_DEBUG
+  Serial.println(WiFi.status());
+  delay(1000);
+#endif // WIFI_DEBUG
 
-  leds[0] = CRGB::Black;
-  FastLED.show();
-  delay(30);
+  ums3.setPixelColor(UMS3::colorWheel(color++));
 }
